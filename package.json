@@ -1,0 +1,9 @@
+{
+  "name": "dns-prefetch-webpack-plugin",
+  "version": "0.0.1",
+  "description": "Dns prefetch webpack plugin",
+  "main": "lib/index.js",
+  "repository": "git@github.com:afeiship/dns-prefetch-webpack-plugin.git",
+  "author": "feizheng <1290657123@qq.com>",
+  "license": "MIT"
+}
