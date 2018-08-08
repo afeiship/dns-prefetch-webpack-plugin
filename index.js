@@ -1,7 +1,6 @@
 var objectAssign = require('object-assign');
 var process = require('./lib/process');
-var RETURN_VALUE = function (inValue) { return inValue };
-var DEFAULT_FORMAT = 'tar';
+
 
 /**
  * Configure the plugin
@@ -9,8 +8,7 @@ var DEFAULT_FORMAT = 'tar';
  */
 function DnsPrefetchWebpackPlugin(inOptions) {
   var options = objectAssign({
-    format: DEFAULT_FORMAT,
-    returnValue: RETURN_VALUE
+    items: [],
   }, inOptions);
 
   this.options = options;
@@ -21,22 +19,19 @@ function DnsPrefetchWebpackPlugin(inOptions) {
  * Implement the plugin
  */
 DnsPrefetchWebpackPlugin.prototype.apply = function (compiler) {
-  var self = this;
+  var items = this.options.items;
   var processer = function (data, callback) {
-    replacements.forEach(function (replacement) {
-      data.html = replacement(data.html);
-    });
-    callback(null, data);
+    process(items, data, callback);
   };
 
   if (compiler.hooks) {
     // webpack >=4.0
-    compiler.hooks.emit.tap('DnsPrefetchWebpackPlugin', function (compilation) {
+    compiler.hooks.compilation.tap('DnsPrefetchWebpackPlugin', function (compilation) {
       compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tapAsync('DnsPrefetchWebpackPlugin', processer);
     });
   } else {
     // webpack < 4.0:
-    compiler.plugin('emit', function (compilation) {
+    compiler.plugin('compilation', function (compilation) {
       compilation.plugin('html-webpack-plugin-before-html-processing', processer);
     });
   }
