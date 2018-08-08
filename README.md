@@ -8,7 +8,13 @@ npm install afeiship/dns-prefetch-webpack-plugin
 
 ## usage:
 ```js
-new DnsPrefetchWebpackPlugin()
+new DnsPrefetchWebpackPlugin({
+  items:[
+    '//www.baidu.com',
+    '//img0.baidu.com',
+    '//img1.baidu.com'
+  ]
+})
 ```
 
 
