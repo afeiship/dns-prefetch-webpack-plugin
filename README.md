@@ -1,12 +1,12 @@
 # dns-prefetch-webpack-plugin
-> Dns prefetch webpack plugin
+> Dns prefetch webpack plugin.
 
-## install:
+## installation
 ```bash
-npm install afeiship/dns-prefetch-webpack-plugin
+npm install @feizheng/dns-prefetch-webpack-plugin
 ```
 
-## usage:
+## usage
 ```js
 new DnsPrefetchWebpackPlugin({
   items:[
@@ -16,6 +16,3 @@ new DnsPrefetchWebpackPlugin({
   ]
 })
 ```
-
-
-## resource:
