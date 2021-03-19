@@ -15,5 +15,11 @@
   },
   "devDependencies": {
     "release-it": "^14.4.1"
-  }
+  },
+  "keywords": [
+    "dns",
+    "prefetch",
+    "webpack",
+    "plugin"
+  ]
 }
