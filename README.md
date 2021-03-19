@@ -3,7 +3,7 @@
 
 ## installation
 ```bash
-npm install @feizheng/dns-prefetch-webpack-plugin
+npm install @jswork/dns-prefetch-webpack-plugin
 ```
 
 ## usage

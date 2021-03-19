@@ -1,5 +1,5 @@
 {
-  "name": "@feizheng/dns-prefetch-webpack-plugin",
+  "name": "@jswork/dns-prefetch-webpack-plugin",
   "version": "1.0.0",
   "description": "Dns prefetch webpack plugin.",
   "main": "index.js",
@@ -7,9 +7,13 @@
   "author": "feizheng <1290657123@qq.com>",
   "license": "MIT",
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "scripts": {
+    "release": "release-it"
+  },
   "devDependencies": {
-    "@feizheng/rake-git": "^1.2.0"
+    "release-it": "^14.4.1"
   }
 }
